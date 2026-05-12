@@ -6,15 +6,16 @@ const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  // Điền tiếp các biến env vào đây nếu dùng
 };
 
 let db, auth, currentUser;
 const appId = "marcus-store-plan";
 
 export async function initFirebase(onDataSync) {
-  if (!firebaseConfig.apiKey) return null;
-
+  if (!firebaseConfig.apiKey) {
+    console.warn("Missing Firebase API Key in Environment Variables");
+    return;
+  }
   try {
     const app = initializeApp(firebaseConfig);
     db = getFirestore(app);
@@ -32,15 +33,17 @@ export async function initFirebase(onDataSync) {
       "plan_state",
       "main_doc",
     );
-    onSnapshot(docRef, (snapshot) => {
-      if (snapshot.exists()) {
-        onDataSync(snapshot.data());
-      }
-    });
-    return true;
+    onSnapshot(
+      docRef,
+      (snapshot) => {
+        if (snapshot.exists()) {
+          onDataSync(snapshot.data());
+        }
+      },
+      (error) => console.error("Firebase Sync Error:", error),
+    );
   } catch (error) {
     console.error("Firebase Init Error:", error);
-    return false;
   }
 }
 

@@ -8,7 +8,6 @@ import {
   isTaskDone,
 } from "./ui/renderer.js";
 
-// Khởi tạo Quản lý Trạng thái (State Management - Cơ bản nhất)
 let state = JSON.parse(
   localStorage.getItem("grad_proj_2026_electronic") || "{}",
 );
@@ -25,7 +24,7 @@ function triggerRender() {
   updateStats(state);
 }
 
-// Global UI Events (Đưa ra window để template HTML tĩnh có thể bấm được)
+// Map event functions to Window object for HTML inline handlers
 window.toggleMainTask = function (phaseId, index) {
   const task = TASKS[phaseId][index];
   const time = getCurrentTime();
@@ -48,51 +47,53 @@ window.toggleMainTask = function (phaseId, index) {
 window.toggleSubTask = function (subtaskId) {
   const done = isTaskDone(state, subtaskId);
   state[subtaskId] = { done: !done, time: !done ? getCurrentTime() : null };
+
   triggerRender();
   saveStateLocal();
   syncStateToFirebase(state);
 };
 
-// Bắt sự kiện chuyển Tab không dùng hàm inline
-document.addEventListener("DOMContentLoaded", () => {
-  const tabBtns = document.querySelectorAll(".tab-btn");
-  tabBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const targetId = e.target.dataset.target;
-
-      tabBtns.forEach((b) => {
-        b.classList.remove(
-          "bg-indigo-50",
-          "text-indigo-700",
-          "border-indigo-200",
-        );
-        b.classList.add("text-slate-600", "border-transparent");
-      });
-      e.target.classList.add(
+window.switchTab = function (tabId) {
+  document.querySelectorAll(".tab-btn").forEach((btn) => {
+    if (btn.dataset.target === tabId) {
+      btn.classList.remove(
+        "text-slate-600",
+        "hover:bg-slate-100",
+        "border-transparent",
+      );
+      btn.classList.add("bg-indigo-50", "text-indigo-700", "border-indigo-200");
+    } else {
+      btn.classList.add(
+        "text-slate-600",
+        "hover:bg-slate-100",
+        "border-transparent",
+      );
+      btn.classList.remove(
         "bg-indigo-50",
         "text-indigo-700",
         "border-indigo-200",
       );
-      e.target.classList.remove("text-slate-600", "border-transparent");
-
-      document.querySelectorAll(".section-content").forEach((sec) => {
-        if (sec.id === targetId) {
-          sec.classList.remove("hidden-section");
-          sec.classList.add("active-section");
-        } else {
-          sec.classList.add("hidden-section");
-          sec.classList.remove("active-section");
-        }
-      });
-    });
+    }
   });
 
-  // Khởi chạy App
+  document.querySelectorAll(".section-content").forEach((sec) => {
+    if (sec.id === tabId) {
+      sec.classList.remove("hidden-section");
+      sec.classList.add("active-section");
+    } else {
+      sec.classList.add("hidden-section");
+      sec.classList.remove("active-section");
+    }
+  });
+};
+
+// Lifecycle Init
+document.addEventListener("DOMContentLoaded", () => {
+  triggerRender();
+
   initFirebase((syncedData) => {
     state = syncedData;
     saveStateLocal();
     triggerRender();
   });
-
-  triggerRender();
 });

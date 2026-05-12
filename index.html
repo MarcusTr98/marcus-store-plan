@@ -49,42 +49,49 @@
         id="tabs-container"
       >
         <button
+          onclick="window.switchTab('overview')"
           class="tab-btn active px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap bg-indigo-50 text-indigo-700 border border-indigo-200"
           data-target="overview"
         >
           📊 Tổng quan
         </button>
         <button
+          onclick="window.switchTab('members')"
           class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
           data-target="members"
         >
           👥 Phân công
         </button>
         <button
+          onclick="window.switchTab('phase1')"
           class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
           data-target="phase1"
         >
           GĐ 1 (Tuần 1-2)
         </button>
         <button
+          onclick="window.switchTab('phase2')"
           class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
           data-target="phase2"
         >
           GĐ 2 (Tuần 3-9)
         </button>
         <button
+          onclick="window.switchTab('phase3')"
           class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
           data-target="phase3"
         >
           GĐ 3 (Tuần 10-11)
         </button>
         <button
+          onclick="window.switchTab('phase4')"
           class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
           data-target="phase4"
         >
           GĐ 4 (Tuần 12-14)
         </button>
         <button
+          onclick="window.switchTab('phase5')"
           class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
           data-target="phase5"
         >
@@ -196,8 +203,9 @@
                   Khởi tạo & Thiết kế chung
                 </h4>
                 <p class="text-sm text-slate-500 leading-relaxed">
-                  Chốt yêu cầu hệ thống, thiết kế Database (ERD), chốt API
-                  Contract và dựng Base Project đẩy lên GitHub.
+                  Chốt yêu cầu hệ thống (Scope), thiết kế Database (ERD), chốt
+                  định dạng API Contract và dựng Base Project đẩy lên nhánh main
+                  GitHub.
                 </p>
               </div>
               <div class="relative">
@@ -215,8 +223,9 @@
                   Phát triển Độc lập (Tự làm Module)
                 </h4>
                 <p class="text-sm text-slate-500 leading-relaxed">
-                  Dựng giao diện Vue.js, code Backend API riêng biệt và tự ghép
-                  nối API thật vào giao diện.
+                  Dựng giao diện Vue.js bằng JSON giả, code Backend API riêng
+                  biệt và tự ghép nối API thật vào giao diện để chạy hoàn thiện
+                  chức năng cá nhân.
                 </p>
               </div>
               <div class="relative">
@@ -234,8 +243,9 @@
                   Tích hợp Hệ thống
                 </h4>
                 <p class="text-sm text-slate-500 leading-relaxed">
-                  Merge code của 5 cá nhân lên nhánh main. Test chéo luồng xuyên
-                  suốt.
+                  Merge code của 5 cá nhân lên nhánh main (xử lý Conflict). Test
+                  chéo luồng xuyên suốt (Đăng nhập -> Lọc SP -> Giỏ hàng ->
+                  Thanh toán -> Trừ kho).
                 </p>
               </div>
               <div class="relative">
@@ -253,8 +263,9 @@
                   Tài liệu & Báo cáo
                 </h4>
                 <p class="text-sm text-slate-500 leading-relaxed">
-                  Tổng hợp thành Quyển Đồ án bản Final và làm file Slide PPTX
-                  hợp nhất toàn team.
+                  Tự viết báo cáo chi tiết thành phần (ERD, API, UI). Tổng hợp
+                  thành Quyển Đồ án bản Final và làm file Slide PPTX hợp nhất
+                  toàn team.
                 </p>
               </div>
               <div class="relative">
@@ -272,8 +283,9 @@
                   Tổng duyệt (Mock Defense)
                 </h4>
                 <p class="text-sm text-slate-500 leading-relaxed">
-                  Chạy demo kịch bản trực tiếp trên web đã live. Lường trước câu
-                  hỏi phản biện.
+                  Cả team bấm giờ trình bày. Chạy demo kịch bản trực tiếp trên
+                  web đã live. Lường trước các câu hỏi phản biện để chuẩn bị
+                  kịch bản bảo vệ trơn tru.
                 </p>
               </div>
             </div>
@@ -285,6 +297,9 @@
             <h3 class="text-lg font-bold text-slate-800">
               Phân công nhiệm vụ chi tiết
             </h3>
+            <p class="text-sm text-slate-500 mt-1">
+              Chi tiết vai trò của 5 thành viên (Backend, Frontend, Tài liệu)
+            </p>
           </div>
           <div
             id="member-list"

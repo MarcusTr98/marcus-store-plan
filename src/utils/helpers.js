@@ -9,18 +9,19 @@ export function getCurrentTime() {
 }
 
 export function animateValue(id, start, end, duration) {
-  const obj = document.getElementById(id);
-  if (!obj || start === end) {
-    if (obj) obj.innerHTML = end;
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (start === end) {
+    el.innerHTML = end;
     return;
   }
   let startTimestamp = null;
   const step = (timestamp) => {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    el.innerHTML = Math.floor(progress * (end - start) + start);
     if (progress < 1) window.requestAnimationFrame(step);
-    else obj.innerHTML = end;
+    else el.innerHTML = end;
   };
   window.requestAnimationFrame(step);
 }
