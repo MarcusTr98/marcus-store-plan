@@ -1,6 +1,16 @@
 import { TASKS } from "./data/constants.js";
 import { getCurrentTime } from "./utils/helpers.js";
 import { initFirebase, syncStateToFirebase } from "./services/firebase.js";
+
+import { TASKS } from "./data/tasks/index.js";
+import { getCurrentTime } from "./utils/helpers.js";
+import { initFirebase, syncStateToFirebase } from "./services/firebase.js";
+import {
+  renderTasks,
+  renderMembers,
+  updateStats,
+  isTaskDone,
+} from "./ui/renderer.js";
 import {
   renderTasks,
   renderMembers,

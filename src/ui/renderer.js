@@ -1,5 +1,9 @@
 import { TASKS, MEMBERS, TAG_STYLES, TAG_LABELS } from "../data/constants.js";
 import { animateValue } from "../utils/helpers.js";
+import { TAG_STYLES, TAG_LABELS } from "../data/config.js";
+import { MEMBERS } from "../data/members.js";
+import { TASKS } from "../data/tasks/index.js";
+import { animateValue } from "../utils/helpers.js";
 
 export function isTaskDone(state, id) {
   return state[id]?.done === true || state[id] === true;
