@@ -11,8 +11,8 @@
     />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body class="text-slate-800 antialiased min-h-screen pb-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
+  <body class="text-slate-800 antialiased min-h-screen pb-12 text-[15px]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
       <header class="mb-8">
         <div class="flex items-center gap-3 mb-2">
           <div
@@ -38,7 +38,7 @@
             Kế hoạch Dự án Tốt nghiệp - MarcusStore
           </h1>
         </div>
-        <p class="text-slate-500 font-medium">
+        <p class="text-slate-600 font-medium text-base">
           Spring Boot + VueJS + SQL Server · Bán điện thoại di động · Nhóm 5
           người
         </p>
@@ -50,49 +50,49 @@
       >
         <button
           onclick="window.switchTab('overview')"
-          class="tab-btn active px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap bg-indigo-50 text-indigo-700 border border-indigo-200"
+          class="tab-btn active px-4 py-2.5 text-base font-medium rounded-lg transition-all whitespace-nowrap bg-indigo-50 text-indigo-700 border border-indigo-200"
           data-target="overview"
         >
           📊 Tổng quan
         </button>
         <button
           onclick="window.switchTab('members')"
-          class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
+          class="tab-btn px-4 py-2.5 text-base font-medium rounded-lg transition-all whitespace-nowrap text-slate-700 hover:bg-slate-100 border border-transparent"
           data-target="members"
         >
           👥 Phân công
         </button>
         <button
           onclick="window.switchTab('phase1')"
-          class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
+          class="tab-btn px-4 py-2.5 text-base font-medium rounded-lg transition-all whitespace-nowrap text-slate-700 hover:bg-slate-100 border border-transparent"
           data-target="phase1"
         >
           GĐ 1 (Tuần 1-2)
         </button>
         <button
           onclick="window.switchTab('phase2')"
-          class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
+          class="tab-btn px-4 py-2.5 text-base font-medium rounded-lg transition-all whitespace-nowrap text-slate-700 hover:bg-slate-100 border border-transparent"
           data-target="phase2"
         >
           GĐ 2 (Tuần 3-9)
         </button>
         <button
           onclick="window.switchTab('phase3')"
-          class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
+          class="tab-btn px-4 py-2.5 text-base font-medium rounded-lg transition-all whitespace-nowrap text-slate-700 hover:bg-slate-100 border border-transparent"
           data-target="phase3"
         >
           GĐ 3 (Tuần 10-11)
         </button>
         <button
           onclick="window.switchTab('phase4')"
-          class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
+          class="tab-btn px-4 py-2.5 text-base font-medium rounded-lg transition-all whitespace-nowrap text-slate-700 hover:bg-slate-100 border border-transparent"
           data-target="phase4"
         >
           GĐ 4 (Tuần 12-14)
         </button>
         <button
           onclick="window.switchTab('phase5')"
-          class="tab-btn px-4 py-2.5 text-sm font-medium rounded-lg transition-all whitespace-nowrap text-slate-600 hover:bg-slate-100 border border-transparent"
+          class="tab-btn px-4 py-2.5 text-base font-medium rounded-lg transition-all whitespace-nowrap text-slate-700 hover:bg-slate-100 border border-transparent"
           data-target="phase5"
         >
           GĐ 5 (Tuần cuối)
@@ -106,7 +106,7 @@
               class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"
             >
               <div
-                class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1"
+                class="text-slate-600 text-xs font-semibold uppercase tracking-wider mb-1"
               >
                 Tổng công việc
               </div>
@@ -118,7 +118,7 @@
               class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"
             >
               <div
-                class="text-emerald-500 text-xs font-semibold uppercase tracking-wider mb-1"
+                class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-1"
               >
                 Đã hoàn thành
               </div>
@@ -130,7 +130,7 @@
               class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"
             >
               <div
-                class="text-amber-500 text-xs font-semibold uppercase tracking-wider mb-1"
+                class="text-amber-600 text-xs font-semibold uppercase tracking-wider mb-1"
               >
                 Cần làm
               </div>
@@ -142,7 +142,7 @@
               class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center"
             >
               <div
-                class="text-indigo-500 text-xs font-semibold uppercase tracking-wider mb-2"
+                class="text-indigo-600 text-xs font-semibold uppercase tracking-wider mb-2"
               >
                 Tiến độ chung
               </div>
@@ -168,10 +168,10 @@
             class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
           >
             <h3
-              class="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2"
+              class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2"
             >
               <svg
-                class="w-5 h-5 text-slate-400"
+                class="w-6 h-6 text-slate-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -186,23 +186,23 @@
               Lộ trình phát triển Hệ thống
             </h3>
             <div
-              class="relative pl-4 sm:pl-6 border-l-2 border-slate-100 space-y-8"
+              class="relative pl-4 sm:pl-6 border-l-2 border-slate-200 space-y-8"
             >
               <div class="relative">
                 <div
                   class="absolute -left-[21px] sm:-left-[29px] top-1.5 w-3 h-3 rounded-full bg-indigo-500 ring-4 ring-indigo-50"
                 ></div>
                 <div
-                  class="text-xs font-bold text-indigo-500 mb-1 tracking-wide uppercase"
+                  class="text-sm font-bold text-indigo-600 mb-1 tracking-wide uppercase"
                 >
                   11/05 - 24/05/2026 (Tuần 1-2)
                 </div>
                 <h4
-                  class="text-sm sm:text-base font-semibold text-slate-800 mb-1"
+                  class="text-base sm:text-lg font-semibold text-slate-800 mb-1"
                 >
                   Khởi tạo & Thiết kế chung
                 </h4>
-                <p class="text-sm text-slate-500 leading-relaxed">
+                <p class="text-base text-slate-600 leading-relaxed">
                   Chốt yêu cầu hệ thống (Scope), thiết kế Database (ERD), chốt
                   định dạng API Contract và dựng Base Project đẩy lên nhánh main
                   GitHub.
@@ -213,16 +213,16 @@
                   class="absolute -left-[21px] sm:-left-[29px] top-1.5 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-emerald-50"
                 ></div>
                 <div
-                  class="text-xs font-bold text-emerald-500 mb-1 tracking-wide uppercase"
+                  class="text-sm font-bold text-emerald-600 mb-1 tracking-wide uppercase"
                 >
                   25/05 - 12/07/2026 (Tuần 3-9)
                 </div>
                 <h4
-                  class="text-sm sm:text-base font-semibold text-slate-800 mb-1"
+                  class="text-base sm:text-lg font-semibold text-slate-800 mb-1"
                 >
                   Phát triển Độc lập (Tự làm Module)
                 </h4>
-                <p class="text-sm text-slate-500 leading-relaxed">
+                <p class="text-base text-slate-600 leading-relaxed">
                   Dựng giao diện Vue.js bằng JSON giả, code Backend API riêng
                   biệt và tự ghép nối API thật vào giao diện để chạy hoàn thiện
                   chức năng cá nhân.
@@ -233,16 +233,16 @@
                   class="absolute -left-[21px] sm:-left-[29px] top-1.5 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-amber-50"
                 ></div>
                 <div
-                  class="text-xs font-bold text-amber-500 mb-1 tracking-wide uppercase"
+                  class="text-sm font-bold text-amber-600 mb-1 tracking-wide uppercase"
                 >
                   13/07 - 26/07/2026 (Tuần 10-11)
                 </div>
                 <h4
-                  class="text-sm sm:text-base font-semibold text-slate-800 mb-1"
+                  class="text-base sm:text-lg font-semibold text-slate-800 mb-1"
                 >
                   Tích hợp Hệ thống
                 </h4>
-                <p class="text-sm text-slate-500 leading-relaxed">
+                <p class="text-base text-slate-600 leading-relaxed">
                   Merge code của 5 cá nhân lên nhánh main (xử lý Conflict). Test
                   chéo luồng xuyên suốt (Đăng nhập -> Lọc SP -> Giỏ hàng ->
                   Thanh toán -> Trừ kho).
@@ -253,16 +253,16 @@
                   class="absolute -left-[21px] sm:-left-[29px] top-1.5 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-blue-50"
                 ></div>
                 <div
-                  class="text-xs font-bold text-blue-500 mb-1 tracking-wide uppercase"
+                  class="text-sm font-bold text-blue-600 mb-1 tracking-wide uppercase"
                 >
                   27/07 - 16/08/2026 (Tuần 12-14)
                 </div>
                 <h4
-                  class="text-sm sm:text-base font-semibold text-slate-800 mb-1"
+                  class="text-base sm:text-lg font-semibold text-slate-800 mb-1"
                 >
                   Tài liệu & Báo cáo
                 </h4>
-                <p class="text-sm text-slate-500 leading-relaxed">
+                <p class="text-base text-slate-600 leading-relaxed">
                   Tự viết báo cáo chi tiết thành phần (ERD, API, UI). Tổng hợp
                   thành Quyển Đồ án bản Final và làm file Slide PPTX hợp nhất
                   toàn team.
@@ -273,16 +273,16 @@
                   class="absolute -left-[21px] sm:-left-[29px] top-1.5 w-3 h-3 rounded-full bg-rose-500 ring-4 ring-rose-50"
                 ></div>
                 <div
-                  class="text-xs font-bold text-rose-500 mb-1 tracking-wide uppercase"
+                  class="text-sm font-bold text-rose-600 mb-1 tracking-wide uppercase"
                 >
                   Cuối Tháng 8/2026 (Tuần cuối)
                 </div>
                 <h4
-                  class="text-sm sm:text-base font-semibold text-slate-800 mb-1"
+                  class="text-base sm:text-lg font-semibold text-slate-800 mb-1"
                 >
                   Tổng duyệt (Mock Defense)
                 </h4>
-                <p class="text-sm text-slate-500 leading-relaxed">
+                <p class="text-base text-slate-600 leading-relaxed">
                   Cả team bấm giờ trình bày. Chạy demo kịch bản trực tiếp trên
                   web đã live. Lường trước các câu hỏi phản biện để chuẩn bị
                   kịch bản bảo vệ trơn tru.
@@ -294,78 +294,75 @@
 
         <div id="members" class="section-content hidden-section">
           <div class="mb-6">
-            <h3 class="text-lg font-bold text-slate-800">
+            <h3 class="text-xl font-bold text-slate-800">
               Phân công nhiệm vụ chi tiết
             </h3>
-            <p class="text-sm text-slate-500 mt-1">
-              Chi tiết vai trò của 5 thành viên (Backend, Frontend, Tài liệu)
-            </p>
           </div>
           <div
             id="member-list"
-            class="grid grid-cols-1 md:grid-cols-2 gap-5"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6"
           ></div>
         </div>
 
         <div id="phase1" class="section-content hidden-section">
           <div class="mb-4 flex items-center justify-between">
-            <h3 class="text-lg font-bold text-slate-800">
+            <h3 class="text-xl font-bold text-slate-800">
               Khởi tạo & Thiết kế chung (Tuần 1-2)
             </h3>
             <span
-              class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full"
+              class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-bold rounded-full"
               id="count-p1"
             ></span>
           </div>
-          <div class="space-y-3" id="tasks-p1"></div>
+          <div class="space-y-4" id="tasks-p1"></div>
         </div>
         <div id="phase2" class="section-content hidden-section">
           <div class="mb-4 flex items-center justify-between">
-            <h3 class="text-lg font-bold text-slate-800">
+            <h3 class="text-xl font-bold text-slate-800">
               Phát triển Độc lập Module (Tuần 3-9)
             </h3>
             <span
-              class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full"
+              class="px-3 py-1 bg-emerald-100 text-emerald-800 text-sm font-bold rounded-full"
               id="count-p2"
             ></span>
           </div>
-          <div class="space-y-3" id="tasks-p2"></div>
+          <div class="space-y-4" id="tasks-p2"></div>
         </div>
         <div id="phase3" class="section-content hidden-section">
           <div class="mb-4 flex items-center justify-between">
-            <h3 class="text-lg font-bold text-slate-800">
+            <h3 class="text-xl font-bold text-slate-800">
               Tích hợp Hệ thống (Tuần 10-11)
             </h3>
             <span
-              class="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full"
+              class="px-3 py-1 bg-amber-100 text-amber-800 text-sm font-bold rounded-full"
               id="count-p3"
             ></span>
           </div>
-          <div class="space-y-3" id="tasks-p3"></div>
+          <div class="space-y-4" id="tasks-p3"></div>
         </div>
         <div id="phase4" class="section-content hidden-section">
           <div class="mb-4 flex items-center justify-between">
-            <h3 class="text-lg font-bold text-slate-800">
+            <h3 class="text-xl font-bold text-slate-800">
               Tài liệu & Báo cáo (Tuần 12-14)
             </h3>
             <span
-              class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full"
+              class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-bold rounded-full"
               id="count-p4"
             ></span>
           </div>
-          <div class="space-y-3" id="tasks-p4"></div>
+          <div class="space-y-4" id="tasks-p4"></div>
         </div>
         <div id="phase5" class="section-content hidden-section">
           <div class="mb-4 flex items-center justify-between">
-            <h3 class="text-lg font-bold text-slate-800">
+            <h3 class="text-xl font-bold text-slate-800">
               Tổng duyệt Mock Defense (Tuần cuối)
             </h3>
             <span
-              class="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-bold rounded-full"
+              class="px-3 py-1 bg-rose-100 text-rose-800 text-sm font-bold rounded-full"
               id="count-p5"
             ></span>
           </div>
-          <div class="space-y-3" id="tasks-p5"></div>
+          <div class="space-y-4" id="tasks-p5"></div>
         </div>
       </main>
     </div>

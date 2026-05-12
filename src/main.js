@@ -57,14 +57,14 @@ window.switchTab = function (tabId) {
   document.querySelectorAll(".tab-btn").forEach((btn) => {
     if (btn.dataset.target === tabId) {
       btn.classList.remove(
-        "text-slate-600",
+        "text-slate-700",
         "hover:bg-slate-100",
         "border-transparent",
       );
       btn.classList.add("bg-indigo-50", "text-indigo-700", "border-indigo-200");
     } else {
       btn.classList.add(
-        "text-slate-600",
+        "text-slate-700",
         "hover:bg-slate-100",
         "border-transparent",
       );
